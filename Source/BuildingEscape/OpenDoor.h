@@ -15,13 +15,15 @@ class BUILDINGESCAPE_API UOpenDoor : public UActorComponent
 
 public:	
 	// Sets default values for this component's properties
-	UOpenDoor();
+	UOpenDoor(); // the constructor
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
 	void OpenDoor();
+
+	void CloseDoor();
 
 public:	
 	// Called every frame
@@ -33,7 +35,14 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* Pressureplate;
-
+	AActor* Owner;
 	AActor* ActorThatOpens; // pawn inherits by actor
+
+	UPROPERTY(EditAnywhere)
+	float DoorCloseDelay = 1.f;
+
+	float LastDoorOpenTime;
+
+
 		
 };
