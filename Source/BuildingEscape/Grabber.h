@@ -35,4 +35,5 @@ private:
 
 	// raycast and grab what is in reach
 	void Grab();
+	void Release();
 };

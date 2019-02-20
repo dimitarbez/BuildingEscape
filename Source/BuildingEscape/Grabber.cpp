@@ -46,6 +46,7 @@ void UGrabber::BeginPlay()
 
 		// Bind the input action
 		InputHandle->BindAction("Grab", IE_Pressed, this, &UGrabber::Grab);
+		InputHandle->BindAction("Grab", IE_Released, this, &UGrabber::Release);
 	}
 	else
 	{
@@ -57,6 +58,11 @@ void UGrabber::BeginPlay()
 void UGrabber::Grab()
 {
 	UE_LOG(LogTemp, Error, TEXT("GRABBEDD"));
+}
+
+void UGrabber::Release()
+{
+	UE_LOG(LogTemp, Error, TEXT("RELEASED"));
 }
 
 // Called every frame
