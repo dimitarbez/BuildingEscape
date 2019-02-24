@@ -33,9 +33,9 @@ private:
 	float TriggerMass = 80.f;
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume* Pressureplate;
+	ATriggerVolume* Pressureplate = nullptr;
 
-	AActor* Owner;
+	AActor* Owner = nullptr; // The owning door
 
 	UPROPERTY(EditAnywhere)
 	float DoorCloseDelay = 1.f;
@@ -47,4 +47,6 @@ private:
 	void OpenDoor();
 
 	void CloseDoor();		
+
+	void CheckPressurePlate();
 };
